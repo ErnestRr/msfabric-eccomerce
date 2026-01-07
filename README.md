@@ -32,7 +32,7 @@ El diseño del modelo se creó utilizando una tabla de hechos de ventas y dimens
 ##  Estrategia de Consumo y Optimización de Costos
 Para maximizar la eficiencia operativa y reducir costos de licenciamiento, el flujo de trabajo se diseñó de la siguiente manera:
 * **Modelo Semántico Centralizado:** Se publica el modelo optimizado en el servicio de Fabric.
-* **Consumo Local (Power BI Desktop):** Se utiliza la "maquinita" local para conectarse al **Modelo Semántico de Power BI** mediante Live Connection. Esto permite diseñar reportes avanzados sin requerir el procesamiento de la nube para cada cambio visual, optimizando el uso de capacidades Premium/Fabric y facilitando el desarrollo a usuarios con licencias limitadas.
+* **Consumo Local (Power BI Desktop):** Use Power BI Desktop para conectar el **Modelo Semántico del Medallion**. Esto me permitió diseñar el reporte sin requerir el procesamiento de la nube para cada cambio visual, por cuestiones de costos de licencia.
 
 ## ⚙️ Tecnologías Utilizadas
 * **Microsoft Fabric:** Orquestación, Lakehouse y Gobernanza.
