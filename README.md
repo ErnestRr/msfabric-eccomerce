@@ -16,14 +16,13 @@ A diferencia del ETL tradicional, se **desarrolló** un flujo **ELT** (Extract, 
 <img width="1917" height="746" alt="image" src="https://github.com/user-attachments/assets/a274f752-a44e-4f56-b562-bbe40d112c74" />
 
 ### Capas del Lakehouse:
-1.  **Capa Bronze (Raw data):** Se **realizó** la conexión SQL desde **Supabase** mediante **Data Factory Pipelines**. Los datos se mantuvieron en su formato original.
-2.  **Capa Silver (Cleansed):** Los datos fueron procesados para asegurar la integridad de la información.
+1.  **Capa Bronze (Raw data):** Se **realizó** la conexión SQL desde **Supabase** mediante **Notebooks**. Los datos se mantuvieron en su formato original.
+2.  **Capa Silver:** Los datos fueron procesados para asegurar la integridad de la información.
         * Se normalizaron esquemas y se eliminaron registros duplicados.
 3.  **Capa Gold (Notebook %%sql):** Se **creó** un **Modelo en Estrella (Star Schema)** utilizando Notebooks con **Spark SQL**. Los datos se sirvieron mediante **Direct Lake**, permitiendo que Power BI consumiera los archivos Parquet en OneLake sin necesidad de importar datos, garantizando latencia mínima.
 
 ## Orquestación y Automatización (Data Factory)
 Para garantizar la actualización constante de los datos, se **configuró** un **Data Factory Pipeline** que actúa como orquestador central, automatizando la ingesta desde Supabase y la ejecución secuencial de los Notebooks de transformación.
-
 
 
 ## Modelo de Datos Optimizado
