@@ -158,7 +158,7 @@ Para maximizar la eficiencia operativa y reducir costos de licenciamiento:
 
 ## Reporte con algunos datos operativos
 
-Ver reporte completo 👉 (https://app.powerbi.com/view?r=eyJrIjoiMzJiODdjNTAtYmZiNS00NTM0LWEwZTQtODg1ZGU3NzYwMWI1IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
+Ver reporte en Power BI 👉 (https://app.powerbi.com/view?r=eyJrIjoiMzJiODdjNTAtYmZiNS00NTM0LWEwZTQtODg1ZGU3NzYwMWI1IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
 
 <img width="1491" height="827" alt="Dashboard 1" src="https://github.com/user-attachments/assets/2297200e-4cac-4d55-bca6-d046c2e2beab" /> 
 <img width="1508" height="822" alt="Dashboard 2" src="https://github.com/user-attachments/assets/f4dc5cc5-4e79-4b4d-bf64-17aeef9bc9aa" />
