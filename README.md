@@ -1,6 +1,6 @@
 # 📈 E-commerce Profitability & Data Engineering: Microsoft Fabric Architecture
 
-Este proyecto **implementó** una solución de **BI end to end** utilizando **Microsoft Fabric**. El objetivo principal fue transformar datos transaccionales dispersos —alojados en **Supabase (PostgreSQL)**— en una arquitectura de **Lakehouse** optimizada para el cálculo de la rentabilidad real (Net Profit) y la eficiencia operativa mediante un enfoque de **Arquitectura Medallion**.
+Este proyecto **implementó** una solución de **BI end to end** utilizando **Microsoft Fabric**. El objetivo principal fue transformar datos transaccionales dispersos —alojados en **Supabase (PostgreSQL)**— en una arquitectura de **Lakehouse** optimizada para el cálculo de la eficiencia operativa mediante un enfoque de **Arquitectura Medallion**.
 
 ## 🎯 El Problema de Negocio
 Las E-commerce (Pymes) suelen operar con una visión parcial de su salud financiera debido a:
