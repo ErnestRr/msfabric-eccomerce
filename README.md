@@ -14,7 +14,7 @@ Este proyecto implementó una solución de **BI end-to-end** utilizando **Micros
 
 ---
 
-## 🔧 Sistema Completo Implementado
+##  Sistema Completo Implementado
 
 Este proyecto no es solo el pipeline Fabric. Es una solución end-to-end que incluye:
 
@@ -42,26 +42,21 @@ Este proyecto no es solo el pipeline Fabric. Es una solución end-to-end que inc
 
 ---
 
-## 📊 Resultados Obtenidos
+## Algunos resultados obtenidos
 
 ### Impacto Operativo
 - **Automatización completa:** Decisiones de paquetería en <2 seg vs 30 min manuales
 - **Visibilidad total:** Primera vez calculando margen neto real por producto/zona
 - **Pipeline confiable:** Orquestación automatizada con Data Factory
 
-### Impacto Financiero
-- **23% reducción** en costos de envío
+### Impacto financiero
+- **Reducción** en costos de envío
 - **Identificación de productos no rentables** después de considerar costos logísticos completos
 - **Visibilidad de costos ocultos:** Peso volumétrico, zonas extendidas, devoluciones
 
-### Insights Estratégicos
-- Zona sureste 40% más cara → Cliente ajustó estrategia de pricing
-- Peso volumétrico impactaba 35% de envíos (no se calculaba antes)
-- Proveedor "habitual" no era el más económico en 60% de casos
-
 ---
 
-## El Problema de Negocio
+## El Problema de gegocio
 
 Las E-commerce (Pymes) suelen operar con una visión parcial de su salud financiera debido a:
 
@@ -161,9 +156,9 @@ Para maximizar la eficiencia operativa y reducir costos de licenciamiento:
 
 ---
 
-## Dashboards Interactivos
+## Reporte con algunos datos operativos
 
-Ver reporte completo 👉 [Dashboard de Rentabilidad](https://app.powerbi.com/view?r=eyJrIjoiMzJiODdjNTAtYmZiNS00NTM0LWEwZTQtODg1ZGU3NzYwMWI1IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
+Ver reporte completo 👉 (https://app.powerbi.com/view?r=eyJrIjoiMzJiODdjNTAtYmZiNS00NTM0LWEwZTQtODg1ZGU3NzYwMWI1IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
 
 <img width="1491" height="827" alt="Dashboard 1" src="https://github.com/user-attachments/assets/2297200e-4cac-4d55-bca6-d046c2e2beab" /> 
 <img width="1508" height="822" alt="Dashboard 2" src="https://github.com/user-attachments/assets/f4dc5cc5-4e79-4b4d-bf64-17aeef9bc9aa" />
@@ -179,203 +174,13 @@ Este tipo de arquitectura de datos (Modern ELT) es ideal para organizaciones que
 * **Necesitan realizar análisis de rentabilidad complejos** sobre datos históricos y actuales
 * **Buscan una "fuente única de verdad"** para eliminar discrepancias entre reportes de finanzas, ventas y logística
 * **Quieren desacoplar las cargas de trabajo analíticas** de sus sistemas transaccionales para no afectar el rendimiento operativo
-* **Desean optimizar costos de licencia**, centralizando el modelo en Fabric y consumiéndolo localmente para diseño de reportes
 * **Negocios que requieren migrar de Power BI Service** hacia la capacidad y potencia analítica de **Microsoft Fabric**
-* **E-commerce o retail** con múltiples canales de venta y proveedores logísticos
 
 ---
 
 ## 📧 Contacto
 
 **Ernesto Roldán**  
-Fabric Analytics Engineer | DP-600, PL-300 & PL-200 Certified
-
-📧 [Contacto](mailto:tu@email.com)  
-💼 [LinkedIn](https://linkedin.com/in/tu-perfil)  
-🌐 [ieoanalytics.com](https://ieoanalytics.com)
 
 ---
 
-**¿Necesitas implementar arquitectura similar para tu negocio?**  
-Contáctame para consultoría personalizada.
-```
-
----
-
----
-
----
-
-## **POST LINKEDIN (Híbrido: Negocio + Técnico)**
-```
-Tres sistemas separados.
-Cero visibilidad del costo real.
-
-Un e-commerce de electrónica operaba así:
-→ Ventas en un sistema
-→ Logística en Excel
-→ Costos... nadie los calculaba completos
-
-Resultado:
-Pensaban tener 35% de margen.
-Realidad: 12% después de todos los costos.
-
-La diferencia: $18,000-25,000 MXN mensuales 
-que se perdían sin que nadie lo supiera.
-
-El problema no era vender poco.
-Era no saber cuánto costaba realmente cada venta.
-
-Construí sistema end-to-end que resuelve esto:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PARTE 1: AUTOMATIZACIÓN
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Cliente compra laptop 3.5kg con envío a Oaxaca.
-
-Sistema evalúa 8 proveedores en 2 segundos:
-- DHL: $225 (3 días)
-- Redpack: $185 (5 días) ← Elige este
-- Estafeta: $210 (4 días)
-- 99minutos: No disponible
-- [+ 4 más]
-
-Decisión automática.
-Sin intervención humana.
-Guarda todo en PostgreSQL.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PARTE 2: INTEGRACIÓN DE DATOS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Aquí es donde se pone técnico.
-
-Construí pipeline en Microsoft Fabric con arquitectura medallion:
-
-🔶 BRONZE: Ingesta raw desde Supabase
-   - Datos en formato original
-   - Sin transformaciones
-
-🔷 SILVER: Limpieza y normalización
-   - Problema: Campos numéricos venían como texto
-   - Solución: Script con Spark SQL que limpia y retipa
-   - Elimina duplicados
-   - Valida integridad
-
-🔸 GOLD: Modelo estrella para analytics
-   - Fact: Ventas (grano: pedido individual)
-   - Dims: Producto, Cliente, Zona, Proveedor, Tiempo
-   - Storage: Delta/Parquet en OneLake
-   - Consumo: Direct Lake (Power BI lee Parquet directo)
-
-Orquestación: Data Factory automatiza todo el flujo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PARTE 3: LOS INSIGHTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Al cruzar ventas + logística + devoluciones + comisiones,
-aparecieron cosas que nadie sabía:
-
-🔍 12 productos perdían dinero después de envío
-   (los más vendidos, irónicamente)
-
-🔍 Zona sureste costaba 40% más
-   (cobraban precio estándar a todos)
-
-🔍 Peso volumétrico impactaba 35% de envíos
-   (no lo calculaban antes de elegir proveedor)
-
-🔍 Proveedor "habitual" era 28% más caro
-   en 6 de cada 10 envíos
-
-Dashboard muestra todo esto en tiempo real:
-→ Margen neto REAL por producto
-→ Rentabilidad por zona
-→ Comparativa proveedores
-→ Simulador: "Cambiar a proveedor X = ahorro Y"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-RESULTADOS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Después de 3 meses:
-
-✅ 23% reducción en costos de envío
-✅ Decisiones en 2 seg vs 30 min manuales
-✅ Primera vez viendo margen real, no solo revenue
-✅ 3 productos descontinuados (margen negativo)
-✅ Pricing ajustado en zonas no rentables
-
-El cliente ahora sabe exactamente:
-→ Cuánto gana en cada pedido
-→ Qué zonas son rentables
-→ Qué proveedor conviene según peso/destino
-
-Ya no adivina.
-Lo ve.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STACK TÉCNICO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Para quien le interese la implementación:
-
-Sistema completo:
-→ Frontend: Checkout transaccional
-→ Automatización: n8n (orquestador decisiones)
-→ Transaccional: Supabase (PostgreSQL)
-→ Pipeline: Microsoft Fabric (medallion architecture)
-→ Procesamiento: Spark SQL (transformaciones)
-→ Storage: OneLake (Delta/Parquet)
-→ Analytics: Power BI (Direct Lake)
-
-Todo integrado.
-Desde el checkout hasta el análisis.
-
-Dashboard público: 
-https://app.powerbi.com/view?r=...
-
-Arquitectura técnica: 
-github.com/ErnestRr/msfabric-eccomerce
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-LECCIONES DE ESTE PROYECTO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-1. El problema NO era tecnológico
-   Era de visibilidad
-
-2. Los costos ocultos importan más que las tarifas base
-   (Volumétrico, zonas, devoluciones, comisiones)
-
-3. Ver tu margen REAL puede doler
-   Pero es la única forma de optimizarlo
-
-4. La automatización sin analytics es medio proyecto
-   Necesitas ambos
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-¿Tu negocio calcula margen real 
-o solo sabe cuánto factura?
-
-Para dueños de negocio:
-Si tienes e-commerce/retail y quieres saber
-dónde están tus fugas de dinero, escríbeme.
-Primera auditoría sin costo.
-
-Para equipos técnicos:
-Si necesitas migrar a Fabric o implementar
-arquitectura medallion, también escríbeme.
-Puedo ayudar con la implementación.
-
----
-
-PD: La diferencia entre "cuánto vendí" 
-y "cuánto realmente gané" puede ser 20-30%.
-
-Vale la pena saberlo.
-
-#MicrosoftFabric #PowerBI #Ecommerce #DataEngineering #Rentabilidad #Fabric #Analytics #CostosReales
