@@ -26,6 +26,8 @@ A diferencia del ETL tradicional, se **desarrolló** un flujo **ELT** (Extract, 
 ## Orquestación y Automatización (Data Factory)
 Para garantizar la actualización constante de los datos, se **configuró** un **Data Factory Pipeline** que actúa como orquestador central, automatizando la ingesta desde Supabase y la ejecución secuencial de los Notebooks de transformación.
 
+<img width="1904" height="731" alt="image" src="https://github.com/user-attachments/assets/fa0dc0e8-53f6-40cd-8150-b2a32282e7ef" />
+
 
 ## Modelo de Datos Optimizado
 El diseño del modelo se **estructuró** utilizando una tabla de hechos  y dimensiones.
